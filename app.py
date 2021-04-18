@@ -12,7 +12,7 @@ api = Api(app)
 
 
 def update_agent_state(priority: int) -> int:
-    """post an updated system state to the backend to keep it sync with the local state"""
+    """post an updated system state to the agent to keep it sync with the local state"""
 
     change_agent_state = requests.post(
         url=f"{agent_api_address}/state-update",
@@ -85,4 +85,4 @@ def index():
 
 
 if __name__ == "__main__":
-    app.run(debug=False)
+    app.run()
