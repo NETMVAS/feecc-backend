@@ -1,1 +1,5 @@
-/venv_legacy/
+venv
+venv_legacy
+.idea
+.mypy_cache
+__pycache__
