@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, Response
 from flask_restful import Api, Resource
 import typing as tp
 import requests
@@ -6,13 +6,14 @@ import requests
 # global variables
 agent_api_address: str = "http://127.0.0.1:8080/api"
 current_state: int = 0  # number of the state system is in currently. Ranges from 0 to 3 (refer to states description).
+valid_states = [0, 1, 2, 3]
 
 app = Flask(__name__)
 api = Api(app)
 
 
 def update_agent_state(priority: int) -> int:
-    """post an updated system state to the agent to keep it sync with the local state"""
+    """post an updated system state to the agent to keep it synced with the local state"""
 
     change_agent_state = requests.post(
         url=f"{agent_api_address}/state-update",
@@ -61,8 +62,16 @@ class StateUpdateHandler(Resource):
     """handles a state update request"""
 
     def post(self) -> int:
-        # parse the form data
+        # parse the request data
         data = request.get_json()
+
+        # validate the request
+        global valid_states
+        if not data["change_state_to"] in valid_states:
+            return Response(
+                response='{"status": 406, "msg": "invalid state"}',
+                status=406
+            )
 
         # change own state to the one specified by the sender
         global current_state
@@ -85,4 +94,4 @@ def index():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host="0.0.0.0", port=5000)
