@@ -42,6 +42,8 @@ class CurrentState(Resource):
     """returns current state of the system to the frontend as it is long polling the backend"""
 
     def get(self) -> tp.Dict[str, int]:
+        global current_state
+
         logging.debug(
             f"Received a request for current state. Responding with {current_state}"
         )
@@ -94,7 +96,7 @@ class FormHandler(Resource):
 class StateUpdateHandler(Resource):
     """handles a state update request"""
 
-    def post(self) -> int:
+    def post(self):
         logging.info(
             f"Received a request to update the state."
         )
