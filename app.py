@@ -14,7 +14,7 @@ logging.basicConfig(
 logging.info('Backend started')
 
 # global variables
-agent_api_address: str = "http://127.0.0.1:8080/api"
+agent_api_address: str = "http://127.0.0.1:5000/api"
 current_state: int = 0  # number of the state system is in currently. Ranges from 0 to 3 (refer to states description).
 valid_states = [0, 1, 2, 3]
 
