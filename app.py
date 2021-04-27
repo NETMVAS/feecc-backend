@@ -7,7 +7,7 @@ import logging
 # set up logging
 logging.basicConfig(
     level=logging.DEBUG,
-    filename="backend.log",
+    # filename="backend.log",
     format="%(asctime)s %(levelname)s: %(message)s"
 )
 
