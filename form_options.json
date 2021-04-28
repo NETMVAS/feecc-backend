@@ -1,0 +1,44 @@
+{
+    "product_type": {
+        "field_full_name": "Модель изделия",
+        "options": [
+            "option_1",
+            "option_2",
+            "option_3"
+        ]
+    },
+    "production_stage": {
+        "field_full_name": "Этап производства",
+        "options": [
+            "option_1",
+            "option_2",
+            "option_3"
+        ]
+    },
+    "additional_info": {
+        "field_name_1": {
+            "field_full_name": "Field 1",
+            "options": [
+                "option_1",
+                "option_2",
+                "option_3"
+            ]
+        },
+        "field_name_2": {
+            "field_full_name": "Field 2",
+            "options": [
+                "option_1",
+                "option_2",
+                "option_3"
+            ]
+        },
+        "field_name_3": {
+            "field_full_name": "Field 3",
+            "options": [
+                "option_1",
+                "option_2",
+                "option_3"
+            ]
+        }
+    }
+}
