@@ -3,6 +3,7 @@ from flask_restful import Api, Resource
 import typing as tp
 import requests
 import logging
+import json
 
 # set up logging
 logging.basicConfig(
@@ -50,6 +51,27 @@ class CurrentState(Resource):
 
         response = {"state_no": current_state}
         return response
+
+
+class FormOptions(Resource):
+    """returns contents of the form_options.json file for the frontend to make use of"""
+
+    def get(self):
+        logging.info(f"Received a request for form options.")
+
+        try:
+            with open("form_options.json", "r") as file:
+                form_options = json.load(file)
+
+            response: tp.Dict[str, tp.Dict[str, tp.Any]] = form_options
+            logging.info("served form options successfully")
+
+            return response
+
+        except Exception as E:
+            logging.critical(f"Failed to serve form options:\n{E}")
+
+            return 500
 
 
 class FormHandler(Resource):
@@ -130,6 +152,7 @@ class StateUpdateHandler(Resource):
 
 # REST API endpoints
 api.add_resource(CurrentState, "/api/state")
+api.add_resource(FormOptions, "/api/form-options")
 api.add_resource(FormHandler, "/api/form-handler")
 api.add_resource(StateUpdateHandler, "/api/state-update")
 

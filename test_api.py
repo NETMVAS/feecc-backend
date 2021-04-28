@@ -1,6 +1,6 @@
 import requests
 
-backend_api_address: str = "http://127.0.0.1:5000/api"
+backend_api_address: str = "http://127.0.0.1:8080/api"
 
 
 def current_state() -> int:
