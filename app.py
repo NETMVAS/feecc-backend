@@ -85,13 +85,18 @@ class FormHandler(Resource):
         # parse the form data
         form_data = request.get_json()
 
-        # send the form to the agent
-        relay_the_form = requests.post(
-            url=f"{agent_api_address}/form-handler",
-            json=form_data
-        )
-
         global current_state
+
+        try:
+            # send the form to the agent
+            relay_the_form = requests.post(
+                url=f"{agent_api_address}/form-handler",
+                json=form_data
+            )
+        except Exception as e:
+            logging.error(f"Failed to relay form: {e}")
+            current_state = 0
+            return 200
 
         # change own state and tell the agent to change it's state
         if relay_the_form.ok:
@@ -111,6 +116,8 @@ class FormHandler(Resource):
                 Current state: {current_state}
                 """
             )
+
+            current_state = 0
 
         return 200
 
