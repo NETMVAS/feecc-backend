@@ -8,7 +8,7 @@ import json
 # set up logging
 logging.basicConfig(
     level=logging.DEBUG,
-    # filename="backend.log",
+    filename="backend.log",
     format="%(asctime)s %(levelname)s: %(message)s"
 )
 
@@ -174,4 +174,4 @@ def index():
 
 
 if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=8080)
+    app.run(host="0.0.0.0", port=8080)
