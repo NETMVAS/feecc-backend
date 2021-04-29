@@ -2,42 +2,34 @@
     "product_type": {
         "field_full_name": "Модель изделия",
         "options": [
-            "option_1",
-            "option_2",
-            "option_3"
+            "Alpha 1",
+            "Beta 2",
+            "Gamma 3"
         ]
     },
     "production_stage": {
         "field_full_name": "Этап производства",
         "options": [
-            "option_1",
-            "option_2",
-            "option_3"
+            "Сборка корпуса",
+            "Установка навесного оборудования",
+            "Финальная сборка"
         ]
     },
     "additional_info": {
-        "field_name_1": {
-            "field_full_name": "Field 1",
+        "Комплектация": {
+            "field_full_name": "Комплектация",
             "options": [
-                "option_1",
-                "option_2",
-                "option_3"
+                "Базовая",
+                "Pro",
+                "Platinum"
             ]
         },
-        "field_name_2": {
-            "field_full_name": "Field 2",
+        "Цвет": {
+            "field_full_name": "Цвет",
             "options": [
-                "option_1",
-                "option_2",
-                "option_3"
-            ]
-        },
-        "field_name_3": {
-            "field_full_name": "Field 3",
-            "options": [
-                "option_1",
-                "option_2",
-                "option_3"
+                "Красный",
+                "Синий",
+                "Черный"
             ]
         }
     }
