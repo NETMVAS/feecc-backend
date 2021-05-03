@@ -1,0 +1,46 @@
+[
+  {
+    "module_name": "LED-модуль",
+    "module_image": "led-module.jpg"
+  },
+  {
+    "module_name": "Камера для фото и видеосъемки",
+    "module_image": "fpv.jpg"
+  },
+  {
+    "module_name": "Модуль захвата груза",
+    "module_image": "cargo.jpg"
+  },
+  {
+    "module_name": "Бортовой модуль навигации в помещении",
+    "module_image": "lpsmodule.jpg"
+  },
+  {
+    "module_name": "Модуль навигации GPS/ГЛОНАСС",
+    "module_image": "gps.jpg"
+  },
+  {
+    "module_name": "Программируемая камера OpenMV",
+    "module_image": "openmv.jpg"
+  },
+  {
+    "module_name": "USB радиомодем",
+    "module_image": "modem.jpg"
+  },
+  {
+    "module_name": "Модуль ИК навигации",
+    "module_image": "irmodule.jpg"
+  },
+  {
+    "module_name": "Плата подключения дополнительных модулей",
+    "module_image": "adapter.jpg"
+  },
+  {
+    "module_name": "FPV передатчик",
+    "module_image": "fpv-transmitter.jpg"
+  },
+  {
+    "module_name": "FPV очки",
+    "module_image": "fpv-glass.jpg"
+  }
+]

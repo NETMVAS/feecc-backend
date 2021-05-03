@@ -154,6 +154,9 @@ class StateUpdateHandler(Resource):
             f"Successful state transition to {data['change_state_to']}"
         )
 
+        # update agent's state to keep it synced
+        update_agent_state(2)
+
         return 200
 
 
